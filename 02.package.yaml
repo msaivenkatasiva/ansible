@@ -1,5 +1,5 @@
--name: install nginx and run
-hosts: web
-tasks: 
-  -name: ping the server
-  ansible.builtin.ping:
+- name: install nginx and run
+  hosts: web
+  tasks: 
+    -name: ping the server
+    ansible.builtin.ping:
