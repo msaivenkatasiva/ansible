@@ -9,13 +9,15 @@
 
   - name: print the variable value
     ansible.builtin.debug:
-      msg: "user output:: is {{user}}"
+      msg: "user output:: is {{user}}" #gives the value 1 or 0
 
   - name: check the exit status
     ansible.builtin.debug:
-      msg: "user status is: {{user.rc}}"
+      msg: "user status is: {{user.rc}}" # according to the rc
 
   - name: create user
     ansible.builtin.user:
       name: roboshop
-    when: user.rc != 0
+    when: user.rc != 0 #if rc !=0 then go fwd and create
+
+#the program is all about checking the user if exits or not, if not instead of throwing error go fwd and create the user
