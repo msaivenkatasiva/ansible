@@ -1,10 +1,7 @@
 - name: Variables from PLAY level
   hosts: localhost
-  vars:
-    Name: "siva"
-    Course: "Devops"
-    Institute: "joindevops"
-    Time: "110 hrs"
+  vars_files:
+    - variables.yaml
   tasks:
   - name: Check Variables
     ansible.builtin.debug:
