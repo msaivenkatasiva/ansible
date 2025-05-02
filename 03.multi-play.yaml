@@ -1,5 +1,5 @@
 - name: PLAY-1
-  host: localhost
+  hosts: localhost
   tasks:
   - name: PLAY-1 and TASK-1
     ansible.builtin.debug:
@@ -7,5 +7,5 @@
 
   - name: PLAY-2 and TASK-2
     ansible.builtin.debug:
-      msg: "Hellow from Task-2 and Play-2"
+      msg: "Hellow from PLAY-2 and TASK-2"
   
