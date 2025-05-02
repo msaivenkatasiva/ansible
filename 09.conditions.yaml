@@ -9,3 +9,12 @@
   - name: print the variable value
     ansible.builtin.debug:
       msg: "user output:: is {{user}}"
+
+  - name: check the exit status
+    ansible.builtin.debug:
+      msg: "user status is: {{user.rc}}"
+
+  - name: create user
+    ansible.builtin.user:
+      name: roboshop
+    when: user.rc != 0
