@@ -1,0 +1,13 @@
+- name: install/uninstall
+  hosts: localhost
+  become: yes
+  tasks:
+    name: install and uninstall accordingly
+    ansible.builtin.package:
+      name: "{{item.name}}"
+      state: "{{item.state}}"
+    loop:
+    - {name: 'git', state: 'absent'}
+    - {name: 'mysql', state: 'absent'}
+    - {name: 'postfix', state: 'absent'}
+    - {name: 'nginx', state: 'present'}
